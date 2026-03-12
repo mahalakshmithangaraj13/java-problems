@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class atm{
+    public static void main(String[] args){
+        Scanner withdrawal=new Scanner(System.in);
+        int accountBalance,withdrawalAmount,dailyLimit;
+        accountBalance=withdrawal.nextInt();
+        withdrawalAmount=withdrawal.nextInt();
+        dailyLimit=withdrawal.nextInt();
+        System.out.println((accountBalance<=accountBalance && withdrawalAmount<dailyLimit)? "Approved": "Declined");
+    }
+}
