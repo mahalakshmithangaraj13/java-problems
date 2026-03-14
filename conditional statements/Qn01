@@ -1,0 +1,62 @@
+import java.util.*;
+import java.util.Scanner;
+public class Qn01{
+    public static void main(String[] args){
+        Scanner bonus=new Scanner(System.in);
+        int Rating=bonus.nextInt();
+        int yearOfService=bonus.nextInt();
+        bonus.nextLine();
+        String departmentType=bonus.nextLine();
+        double baseSalary=bonus.nextDouble();
+        int Percentage=0;
+        System.out.println("Performance Rating: "+ Rating);
+            System.out.println("Years of Service: "+ yearOfService);
+            System.out.println("Department: "+departmentType);
+        if (Rating>=3){ 
+            if(departmentType.equalsIgnoreCase("Critical")){
+                if(Rating==5&& yearOfService>=5){
+                    Percentage=25;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+                else if(Rating==4 && yearOfService>=10){
+                    Percentage=22;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+                else if(Rating==4){
+                    Percentage=15;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+                else if (Rating==3){
+                    Percentage=10;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+        double bonus_salary=(baseSalary*Percentage)/100;
+        System.out.println("Bonus Percentage: $"+bonus_salary);
+        System.out.println("Status: Eligible");
+            }
+        else if(departmentType.equalsIgnoreCase("Non-critical")){
+            if(Rating==5){
+                    Percentage=18;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+                else if(Rating==4){
+                    Percentage=12;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+                }
+                else if(Rating==3){
+                    Percentage=8;
+                    System.out.println("Bonus Percentage: "+Percentage+"%");
+        }
+        double bonus_salary=(baseSalary*Percentage)/100;
+        System.out.println("Bonus Percentage: $"+bonus_salary);
+        System.out.println("Status: Eligible");
+        }
+        }
+        else{
+            double bonus_salary=(baseSalary*Percentage)/100;
+            System.out.println("Bonus Percentage: $"+bonus_salary);
+            System.out.println("Status: Non Eligible");
+        }
+        
+        }
+    }
