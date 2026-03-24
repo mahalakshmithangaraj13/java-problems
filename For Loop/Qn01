@@ -1,0 +1,43 @@
+import java.util.*;
+import java.util.Scanner;
+public class Qn01{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int percent=0;
+        double sum=0.0;
+        scan.nextLine();
+        for (int i=0;i<n;i++){
+            String name=scan.next();
+            double salary=scan.nextDouble();
+            int rating=scan.nextInt();
+            scan.nextLine();
+            if(rating==5){
+                percent=15;
+            }
+            else if(rating==4){
+                percent=10;
+            }
+            else if(rating==3){
+                percent=5;
+            }
+            else if(rating==2){
+                percent=2;
+            }
+            else if(rating==1){
+                percent=0;
+            }
+            double finall=salary*(1+percent/100.0);
+            sum=sum+finall;
+            System.out.println("Employee:"+name);
+            System.out.println("Base Salary: $"+salary);
+            System.out.println("Increment:"+percent+"%");
+            System.out.println("Final Salary: $"+finall);
+            System.out.println();
+        }
+        double Average=sum/n;
+        System.out.println("Total Employees Processed:"+n);
+        System.out.println("Total Payroll: $"+sum);
+        System.out.println("Average Salary:$"+Average);
+    }
+}
